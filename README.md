@@ -8,7 +8,29 @@ tree /f
 ---relut tree---
 
 app.java(code)
+package com.example;
+
+public class App {
+    public static void main(String[] args) {
+        System.out.println("Hello Maven!");
+    }
+}
+
+again deskton pom.xml
 pom.xml(code)
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>MyProject</artifactId>
+    <version>1.0</version>
+
+</project>
+
 mvn compile
 mvn test
 mvn package
