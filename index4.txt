@@ -26,6 +26,32 @@ note:in source code management select git also paste url and change masters to m
 --------
 20 terminal
 21.echo "pipeline { agent any; stages { stage(clone.....}}}}
+21.echo "pipeline {
+agent any
+stages {
+stage('Clone') {
+steps {
+git 'https://github.com/username/repo.git'
+}
+}
+stage('Build') {
+steps {
+bat 'mvn clean install'
+}
+}
+stage('Test') {
+steps {
+bat 'npm test'
+}
+}
+stage('Deploy') {
+steps {
+bat 'docker run -d myapp'
+}
+}
+}
+}"
+21.echo "pipleline{agent any;stages{stage("Checkout"){steps{git branch:'main',url:"https://github.com/username/repo.git',credentialsid:'your-credential-id'}}}}">Jenkinsfile
 22.git add Jenkinsfile
 23.git commit -m "Add Jenkinsfile"
 --relut 1 file chang----
